@@ -1,0 +1,16 @@
+# YOLOv5-v8 requirements
+# Usage: pip install -r requirements.txt
+
+# Environments & frameworks -------------------------------------
+# 3.7=<python=<3.9
+# CUDA>=10.2
+# cuDNN>=8.2.2
+# pytorch>=1.7
+# for GPU GTX 16xx: recommended PyTorch 1.10.0 with cuda 10.2
+# usage: pip install torch==1.10.0+cu102 torchvision==0.11.0+cu102 torchaudio==0.10.0 -f https://download.pytorch.org/whl/torch_stable.html
+
+# Base ----------------------------------------------------------
+numpy>=1.18.5
+opencv-python==4.5.5.64
+ultralytics>=8.0.52
+roboflow
