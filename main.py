@@ -11,7 +11,7 @@ if __name__ == '__main__':
     image = cv2.imread("resources/images/_MG_2267.jpg", 1)
 
     # Load classification model
-    model = YOLO(model="models/trained_set1_v5m6_best.pt")
+    model = YOLO(model="models/set1-v5m6-LargeObject.pt")
 
     # Define the size of the sliding window and the stride
     window_size = (360, 360)

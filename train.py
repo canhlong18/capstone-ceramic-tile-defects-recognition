@@ -31,7 +31,7 @@ if __name__ == '__main__':
     # cache =False(disk), =True(ram);
     # device =None, =0,1,2,3(cuda gpu device), =cpu
     model.train(data="datasets/Car-License-Plate-2/data.yaml",
-                epochs=10, batch=8, imgsz=640, patience=50,
+                epochs=100, batch=8, imgsz=1280, patience=50,
                 cache=False, device=0, workers=8)
 
     # validate model and check model info

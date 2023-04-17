@@ -7,11 +7,18 @@ ENV/
 env.bak/
 venv.bak/
 
+# ide folder
+.idea/
+
 # Datasets
 datasets/
 
+# Predict folder
+runs/
+
 # config, private data
 config.py
+test.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
