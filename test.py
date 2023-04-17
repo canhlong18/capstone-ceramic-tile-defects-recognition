@@ -6,8 +6,8 @@ if __name__ == '__main__':
 
     image = cv2.imread("resources/images/_MG_2264.jpg", 1)
 
-    window_size = (640, 640)
-    stride = 640
+    window_size = (360, 360)
+    stride = 240
 
     for x, y, window in sw.sliding_window(image, window_size, stride):
         cv2.namedWindow('img', cv2.WINDOW_NORMAL)
