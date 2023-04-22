@@ -17,7 +17,7 @@ datasets/
 runs/
 
 # config, private data
-config.py
+configs.py
 test.py
 
 # Byte-compiled / optimized / DLL files

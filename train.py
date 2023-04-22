@@ -1,20 +1,17 @@
 """This module perform training model with datasets from roboflow."""
 
-
 from roboflow import Roboflow
 from ultralytics import YOLO
 import os
-import config
-
+import configs
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-os.environ["DATASET_DIRECTORY"] = f"{ROOT_DIR}\datasets"
+os.environ["DATASET_DIRECTORY"] = f"{ROOT_DIR}\\datasets"
 
-rf_apikey = config.roboflow.get('api_key')
-rf_workspace = config.roboflow.get('workspace')
-rf_project = config.roboflow.get('project')
-rf_version = config.roboflow.get('version')
-
+rf_apikey = configs.roboflow.get('api_key')
+rf_workspace = configs.roboflow.get('workspace')
+rf_project = configs.roboflow.get('project')
+rf_version = configs.roboflow.get('version')
 
 if __name__ == '__main__':
     print("CAPSTONE PROJECT: training model process.")
