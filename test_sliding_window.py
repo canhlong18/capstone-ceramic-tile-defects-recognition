@@ -7,11 +7,12 @@ import cv2
 model = YOLO(model="models/set2-v5m6-SmallObject.pt")
 
 # Load the high-resolution image
-img_path = "datasets/ceramic-tile-defects2-smallobects_v9/test/images/_MG_2593_jpg.rf" \
-           ".da50e233102350534751492c7e0c3710.jpg"
+img_path = "resources/images/_MG_2286.jpg"
 image = cv2.imread(img_path, 1)
-# image = cv2.resize(image, (1280, 1280))
+image = cv2.resize(image, (1280, 1280))
+
 show_image = cv2.imread(img_path, 1)
+show_image = cv2.resize(show_image, (1280, 1280))
 
 # Define the size of the sliding window and the stride
 window_size = (312, 312)
