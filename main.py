@@ -10,7 +10,7 @@ if __name__ == '__main__':
     # Load the high-resolution image
     image = cv2.imread("resources/images/_MG_2267.jpg", 1)
 
-    # Load classification model
+    # Load YOLO model
     model = YOLO(model="models/set1-v5m6-LargeObject.pt")
 
     # Define the size of the sliding window and the stride
@@ -39,7 +39,7 @@ if __name__ == '__main__':
                 cv2.rectangle(image, (x_abs, y_abs), (x_abs + w_obj, y_abs + h_obj), (0, 255, 0), 2)
 
     # Display the high-resolution image with bounding boxes
-    cv2.imshow('Predict with sliding window', image)
+    cv2.imshow("Predict with sliding window", image)
     cv2.waitKey(0)
 
     cv2.destroyAllWindows()
