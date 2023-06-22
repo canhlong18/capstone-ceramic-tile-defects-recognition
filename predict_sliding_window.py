@@ -1,9 +1,8 @@
-import math
-
-from ultralytics import YOLO
-from window import sliding_window as sw
-from pathlib import Path
 import cv2
+import math
+from pathlib import Path
+from ultralytics import YOLO
+from window.sliding_window import sliding_window
 
 
 def get_latest_save_dir():
@@ -27,13 +26,12 @@ window_size = (312, 312)
 stride = 240
 
 # Other variables saving prediction results
-first_execute = True
 current_window = 0
 save_dir = ""
 
 
 # Iterate through the sliding windows and process each window
-for x, y, window in sw.sliding_window(image, window_size, stride):
+for x, y, window in sliding_window(image, window_size, stride):
     # Perform object detection on the window
     results = model(source=window, show=False,
                     device=0, conf=0.15, iou=0.65,
@@ -41,8 +39,6 @@ for x, y, window in sw.sliding_window(image, window_size, stride):
 
     # find save-directory
     save_dir = get_latest_save_dir()
-    if first_execute:
-        first_execute = 0
 
     # rename new predicted window image in order to avoid overriding on old images
     Path(f"{save_dir}/image0.jpg").rename(f"{save_dir}/window{str(current_window)}.jpg")

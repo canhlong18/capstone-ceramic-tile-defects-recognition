@@ -1,12 +1,12 @@
 import math
 import cv2
+from pathlib import Path
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog, QLabel
 from ui_mainwindow import Ui_MainWindow
 from ultralytics import YOLO
-from pathlib import Path
-from window import sliding_window as sw
+from window.sliding_window import sliding_window
 
 
 def get_latest_save_dir():
@@ -191,7 +191,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         stride = 360
         save_dir = ""
 
-        for x, y, window in sw.sliding_window(image, window_size, stride):
+        for x, y, window in sliding_window(image, window_size, stride):
             results = self.yolo_model(source=window, device=0, show=False,
                                       conf=self.predict_config['conf'], iou=self.predict_config['iou'],
                                       save=True, save_crop=False, save_txt=True, save_conf=True)

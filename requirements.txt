@@ -9,6 +9,10 @@
 # for GPU GTX 16xx: recommended PyTorch==1.10.0 with cuda==10.2 cuDNN==8.2.2
 # usage: pip install torch==1.10.0+cu102 torchvision==0.11.0+cu102 torchaudio==0.10.0 -f https://download.pytorch.org/whl/torch_stable.html
 
+torch==1.10.0+cu102 --find-links https://download.pytorch.org/whl/torch_stable.html
+torchvision==0.11.0+cu102 --find-links https://download.pytorch.org/whl/torch_stable.html
+torchaudio==0.10.0 --find-links https://download.pytorch.org/whl/torch_stable.html
+
 # Base ----------------------------------------------------------
 numpy>=1.18.5
 opencv-python==4.5.*
