@@ -17,7 +17,7 @@ def get_latest_save_dir():
 model = YOLO(model="models/tiling-models/best.pt")
 
 # Load the high-resolution image
-img_path = Path("resources/for-demo/_MG_2481_.jpg")
+img_path = Path("resources/for-demo/_MG_3071_.jpg")
 image = cv2.imread(str(img_path), 1)
 show_image = cv2.imread(str(img_path), 1)
 
@@ -34,7 +34,7 @@ save_dir = ""
 for x, y, window in sliding_window(image, window_size, stride):
     # Perform object detection on the window
     results = model(source=window, show=False,
-                    device=0, conf=0.15, iou=0.65,
+                    device=0, conf=0.3, iou=0.5,
                     save=True, save_crop=True, save_txt=True, save_conf=True)
 
     # find save-directory
@@ -64,12 +64,12 @@ for x, y, window in sliding_window(image, window_size, stride):
             # Draw bounding box on original image
             cv2.rectangle(img=show_image,
                           pt1=(x_abs, y_abs), pt2=(x_abs + w_obj, y_abs + h_obj),
-                          color=(0, 255, 0), thickness=3)
+                          color=(31, 113, 255), thickness=5)
 
             cv2.putText(img=show_image, text=f"{cls} - {conf}",
                         org=(max(0, x_abs), max(20, y_abs - 5)),
                         fontFace=cv2.FONT_ITALIC, fontScale=3,
-                        color=(133, 83, 245), thickness=4)
+                        color=(3, 6, 191), thickness=6)
 
 cv2.imwrite(f"{save_dir}/{img_path.name}", show_image)
 Path(f"{save_dir}/labels/image0.txt").rename(f"{save_dir}/labels/{img_path.stem}.txt")

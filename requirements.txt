@@ -1,6 +1,14 @@
 # YOLOv5-v8 requirements
 # Usage: pip install -r requirements.txt
 
+# Base ----------------------------------------------------------
+ultralytics>=8.0.52
+roboflow~=1.0.5
+numpy>=1.18.5
+opencv-python==4.5.*
+
+PyQt6~=6.5.1
+
 # Environments & frameworks -------------------------------------
 # 3.7=<python=<3.9
 # CUDA>=10.2
@@ -12,11 +20,3 @@
 torch==1.10.0+cu102 --find-links https://download.pytorch.org/whl/torch_stable.html
 torchvision==0.11.0+cu102 --find-links https://download.pytorch.org/whl/torch_stable.html
 torchaudio==0.10.0 --find-links https://download.pytorch.org/whl/torch_stable.html
-
-# Base ----------------------------------------------------------
-numpy>=1.18.5
-opencv-python==4.5.*
-ultralytics>=8.0.52
-roboflow~=1.0.5
-
-PyQt6~=6.5.1
