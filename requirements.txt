@@ -13,4 +13,6 @@
 numpy>=1.18.5
 opencv-python==4.5.*
 ultralytics>=8.0.52
-roboflow
+roboflow~=1.0.5
+
+PyQt6~=6.5.1

@@ -27,7 +27,7 @@ if __name__ == '__main__':
 
     # cache =False(disk), =True(ram);
     # device =None, =0,1,2,3(cuda gpu device), =cpu
-    model.train(data="datasets/Car-License-Plate-2/data.yaml",
+    model.train(data="datasets/ceramic-tile-defects.v1i/data.yaml",
                 epochs=100, batch=8, imgsz=1280, patience=50,
                 cache=False, device=0, workers=8)
 
